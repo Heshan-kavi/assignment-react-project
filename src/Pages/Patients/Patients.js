@@ -1,5 +1,7 @@
-import React, {useId, useRef} from "react";
+import React, {useId, useRef, useState, useEffect} from "react";
+import moment from 'moment';
 import classes from "./PatientsStyles.module.css";
+import { TbWindowMaximize } from "react-icons/tb";
 
 function Patients(){
 
@@ -7,6 +9,18 @@ function Patients(){
     const damage = useId();
     const newSkillNameRef = useRef(null);
     const damageRef = useRef(null);
+    const [patients, setPatients] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5050/user/singlePatient', {mode: 'cors'})
+            .then((res) => res.json())
+            .then((data) => {
+                setPatients(data);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, []);
 
     return (
         <div className={classes.section}>
@@ -16,27 +30,29 @@ function Patients(){
                     <div className={classes.cardMain}>
                         <span className={classes.cardTitle}>Existing Patients</span>
                     {
-                    // characterRecords.length !== 0 ? 
-                    //     <table>
-                    //         <tbody>
-                    //         <td>
-                    //             <th>Character Name</th>
-                    //             <th>Hit Points</th>
-                    //             <th>Strength</th>
-                    //             <th>Defence</th>
-                    //         </td>
-                    //         {/* {characterRecords.map((val, key) => {
-                    //             return (
-                    //                 <tr key={key} onClick={() => {setSingleCharacterRecord(val); setShowDetailedView(true)}}>
-                    //                     <td>{val.name}</td>
-                    //                     <td>{val.hitPoints}</td>
-                    //                     <td>{val.strength}</td>
-                    //                     <td>{val.defence}</td>
-                    //                 </tr>
-                    //             )
-                    //         })} */}
-                    //         </tbody>
-                    //     </table> : 
+                    patients.length !== 0 ? 
+                        <table className={classes.table}>
+                            <tbody>
+                            <tr className={classes.tr}>
+                                <th className={classes.trh}>First Name</th>
+                                <th className={classes.trh}>Second Name</th>
+                                <th className={classes.trh}>Birthday</th>
+                                <th className={classes.trh}>Gender</th>
+                                <th className={classes.trh}>More</th>
+                            </tr>
+                            {patients.map((val, key) => {
+                                return (
+                                    <tr className={classes.tr} key={key}>
+                                        <td className={classes.td}>{val.FirstName}</td>
+                                        <td className={classes.td}>{val.SecondName}</td>
+                                        <td className={classes.td}>{val.BirthDay.substring(0,10)}</td>
+                                        <td className={classes.td}>{val.Gender}</td>
+                                        <td className={classes.td}><TbWindowMaximize/></td>
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table> : 
                         <div className={classes.cardNoContentText}>There are no Characters to show for you</div>}
                     </div>
                     <div className={classes.cardSub}>
