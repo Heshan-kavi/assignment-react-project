@@ -46,11 +46,11 @@ function Bills(){
                                 <div className={classes.largeInputContainer}>
                                     <div className={classes.inputContainer}>
                                         <label className={classes.label} htmlFor={newSkillName}>From: </label>
-                                        <input className={classes.userInput} ref={newSkillNameRef} name="newSkillName" id={newSkillName} placeholder="First Name" required autoFocus></input>
+                                        <input className={classes.userInput} type="datetime-local" id="birthdaytime" name="birthdaytime"></input>
                                     </div>
                                     <div className={classes.inputContainer}>
-                                        <label className={classes.label} htmlFor={damage}>Second Name: </label>
-                                        <input className={classes.userInput} ref={damageRef} name="damage" id={damage} placeholder="Second Name" required></input>
+                                        <label className={classes.label} htmlFor={damage}>To: </label>
+                                        <input className={classes.userInput} type="datetime-local" id="birthdaytime" name="birthdaytime"></input>
                                     </div>
                                 </div>
                                 <div className={classes.buttonContainer}>
