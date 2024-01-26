@@ -216,6 +216,16 @@
     align-items: baseline;
 }
 
+.birthdayContainer{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    margin: 0px 10px;
+    align-content: center;
+    align-items: baseline;
+    width: 46%;
+}
+
 .label{
     color: black;
 }
@@ -233,6 +243,16 @@
     margin: 0px 100px 15px 100px;
     width: 100%;
     padding: 10px;
+    border: 3px solid mediumseagreen;
+    color: black;
+    border-radius: 5px;
+    background: white;
+}
+
+.birthdayInput{
+    margin: 0px 100px 15px 100px;
+    width: 100%;
+    padding: 9.5px;
     border: 3px solid mediumseagreen;
     color: black;
     border-radius: 5px;

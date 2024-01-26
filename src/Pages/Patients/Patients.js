@@ -58,9 +58,9 @@ function Patients(){
                                     <input className={classes.userInput} ref={newSkillNameRef} name="newSkillName" id={newSkillName} placeholder="Address" required autoFocus></input>
                                 </div>
                                 <div className={classes.largeInputContainer}>
-                                    <div className={classes.inputContainer}>
+                                    <div className={classes.birthdayContainer}>
                                         <label className={classes.label} htmlFor={newSkillName}> Birthday: </label>
-                                        <input className={classes.userInput} ref={newSkillNameRef} name="newSkillName" id={newSkillName} placeholder="BirthDay" required autoFocus></input>
+                                        <input className={classes.birthdayInput} type="datetime-local" id="birthdaytime" name="birthdaytime"></input>
                                     </div>
                                     <div className={classes.inputContainer}>
                                         <label className={classes.label} htmlFor={damage}>Gender: </label>
