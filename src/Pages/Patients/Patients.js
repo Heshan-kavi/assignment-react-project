@@ -53,18 +53,17 @@ function Patients(){
                                         <input className={classes.userInput} ref={damageRef} name="damage" id={damage} placeholder="Second Name" required></input>
                                     </div>
                                 </div>
-                                <div className={classes.largeSingleInputContainer}>
-                                    <label className={classes.label} htmlFor={newSkillName}>Address: </label>
-                                    <input className={classes.userInput} ref={newSkillNameRef} name="newSkillName" id={newSkillName} placeholder="Address" required autoFocus></input>
-                                </div>
                                 <div className={classes.largeInputContainer}>
                                     <div className={classes.birthdayContainer}>
                                         <label className={classes.label} htmlFor={newSkillName}> Birthday: </label>
                                         <input className={classes.birthdayInput} type="datetime-local" id="birthdaytime" name="birthdaytime"></input>
                                     </div>
-                                    <div className={classes.inputContainer}>
+                                    <div className={classes.genderContainer}>
                                         <label className={classes.label} htmlFor={damage}>Gender: </label>
-                                        <input className={classes.userInput} ref={damageRef} name="damage" id={damage} placeholder="Gender" required></input>
+                                        <select className={classes.genderInput} name="cars" id="cars">
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className={classes.largeInputContainer}>
@@ -76,6 +75,10 @@ function Patients(){
                                         <label className={classes.label} htmlFor={damage}>Contact No: </label>
                                         <input className={classes.userInput} ref={damageRef} name="damage" id={damage} placeholder="Contact No" required></input>
                                     </div>
+                                </div>
+                                <div className={classes.largeSingleInputContainer}>
+                                    <label className={classes.label} htmlFor={newSkillName}>Address: </label>
+                                    <input className={classes.userInput} ref={newSkillNameRef} name="newSkillName" id={newSkillName} placeholder="Address" required autoFocus></input>
                                 </div>
                                 <div className={classes.largeSingleInputContainer}>
                                     <label className={classes.label} htmlFor={newSkillName}>Notes: </label>
