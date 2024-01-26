@@ -1,5 +1,4 @@
 import React, {useId, useRef, useState, useEffect} from "react";
-import moment from 'moment';
 import classes from "./PatientsStyles.module.css";
 import { TbWindowMaximize } from "react-icons/tb";
 
@@ -12,7 +11,7 @@ function Patients(){
     const [patients, setPatients] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5050/user/singlePatient', {mode: 'cors'})
+        fetch('http://localhost:5050/user/singlePatient')
             .then((res) => res.json())
             .then((data) => {
                 setPatients(data);
@@ -47,7 +46,7 @@ function Patients(){
                                         <td className={classes.td}>{val.SecondName}</td>
                                         <td className={classes.td}>{val.BirthDay.substring(0,10)}</td>
                                         <td className={classes.td}>{val.Gender}</td>
-                                        <td className={classes.td}><TbWindowMaximize/></td>
+                                        <td className={classes.tdButton} onClick={(e) => {console.log("hello")}}><TbWindowMaximize/></td>
                                     </tr>
                                 )
                             })}

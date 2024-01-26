@@ -302,6 +302,16 @@
     width: 20% ;
 }
 
+.tdButton{
+    padding: 10px;
+    text-transform: capitalize;
+    width: 20% ;
+}
+
+.tdButton:hover{
+    cursor: pointer;
+}
+
 .th{
     padding: 25px;
 }
